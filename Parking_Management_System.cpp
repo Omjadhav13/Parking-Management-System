@@ -55,7 +55,7 @@ class ParkingSlot{
 
         }
         void checkAvailability(){
-
+            
         }
 };
 class ParkingSystem{
@@ -96,11 +96,17 @@ class ParkingSystem{
         }
         void viewVehicle(){
             for(int i=0;i<vehicles.size();i++){
-                cout << "Vehicle Number: " << vehicles[i]->getVehicleNo() << endl;
-                cout << "Owner Name: " << vehicles[i]->getOwnerName() << endl;
-                time_t entry = vehicles[i]->getEntryTime();
-                cout << "Entry Time: " << ctime(&entry) << endl;
-                cout << "------------------------" << endl;
+                if(vehicles.size()==0){
+                    cout << "No vehicles parked, All slots are free"<<endl;
+                    return;
+                }
+                else{
+                    cout << "Vehicle Number: " << vehicles[i]->getVehicleNo() << endl;
+                    cout << "Owner Name: " << vehicles[i]->getOwnerName() << endl;
+                    time_t entry = vehicles[i]->getEntryTime();
+                    cout << "Entry Time: " << ctime(&entry) << endl;
+                    cout << "------------------------" << endl;
+                }
             }
         }   
         void ViewSlot(){
